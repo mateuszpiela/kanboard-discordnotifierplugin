@@ -29,4 +29,4 @@ Documentation
 -------------
 After installing this plugin open your project settings and set webhook url in integrations and also enable Discord Notifier in notification
 
-For how to create webhook in discord please refer to (https://support.discord.com/hc/en-us/articles/228383668-Intro-to-Webhooks)[https://support.discord.com/hc/en-us/articles/228383668-Intro-to-Webhooks]
+For how to create webhook in discord please refer to [https://support.discord.com/hc/en-us/articles/228383668-Intro-to-Webhooks](https://support.discord.com/hc/en-us/articles/228383668-Intro-to-Webhooks)
