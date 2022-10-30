@@ -9,7 +9,7 @@ class Plugin extends Base
 {
     public function initialize()
     {
-        $this->template->hook->attach('template:project:integrations', 'discordnotifier:project/integration');
+        $this->template->hook->attach('template:project:integrations', 'DiscordNotifier:project/integration');
 
         $this->projectNotificationTypeModel->setType('discordnotifier', t('Discord Notifier'), '\Kanboard\Plugin\DiscordNotifier\Notification\DiscordNotifierHandler');
     }
