@@ -51,7 +51,7 @@ class DiscordNotifierHandler extends Base implements NotificationInterface {
     {
         if ($this->userSession->isLogged()) {
             $author = $this->helper->user->getFullname();
-            $avasize = 256;
+            $avasize = 64;
             
             if(key_exists("avatar_path", $this->userSession->getAll())) {
                 $avapath = $this->userSession->getAll()["avatar_path"];
