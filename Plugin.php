@@ -41,7 +41,7 @@ class Plugin extends Base
 
     public function getPluginHomepage()
     {
-        return '';
+        return 'https://github.com/mateuszpiela/kanboard-discordnotifierplugin';
     }
 
     public function getCompatibleVersion()
