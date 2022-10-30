@@ -63,13 +63,12 @@ class DiscordNotifierHandler extends Base implements NotificationInterface {
             $ac_title = $this->notificationModel->getTitleWithoutAuthor($eventName, $eventData);
         }
 
-        $symbol = $this->getIcon($eventName, $eventData) ?? "";
+        $symbol = $this->getIcon($eventName, $eventData) ?? array();
 
         $title_embed = $symbol['icon'] . "  [" . $eventData['task']['project_name'] . "] - #" 
                         . $eventData['task']["id"] . " " 
                         . $eventData['task']["title"];
 
-        $attachment = [];
         if ($this->configModel->get('application_url') !== '') {
             $attachment_link = $this->helper->url->to('TaskViewController', 'show', array('task_id' => $eventData['task']['id'], 'project_id' => $project['id']), '', true);
             $board_lin = $this->helper->url->to('BoardViewController', 'show', array('project_id' => $project['id']), '', true);
@@ -112,7 +111,7 @@ class DiscordNotifierHandler extends Base implements NotificationInterface {
         $subtask_events = array(SubtaskModel::EVENT_CREATE, SubtaskModel::EVENT_UPDATE, SubtaskModel::EVENT_DELETE);
         $comment_events = array(CommentModel::EVENT_UPDATE, CommentModel::EVENT_CREATE, CommentModel::EVENT_DELETE, CommentModel::EVENT_USER_MENTION);
 
-        $subtask_status = $eventData['subtask']['status'];
+        $subtask_status = $eventData['subtask']['status'] ?? array();
 
         if (in_array($eventName, $subtask_events))
         {
